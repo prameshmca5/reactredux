@@ -7,7 +7,7 @@ import Contact from './Contact';
 import About from './About';
 import data from '../data/data.json';
 import './App.css';
-import Reduxjs from "./Redux/Reduxjs";
+import MovieList from "./Redux/MovieList";
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +17,11 @@ class App extends Component {
       jumbotronTitle: "List of courses",
       feeds: [],
     }
+
+
   }
+
+
 
   UNSAFE_componentWillMount() {
     this.setState({
@@ -33,7 +37,7 @@ class App extends Component {
           <Switch>
             <Route path="/contact" component={Contact}/>
             <Route path="/about" component={About}/>
-            <Route path="/redux" component={Reduxjs}/>
+            <Route path="/redux" component={MovieList}/>
             <Route exact path="/" render={(props) => (
               <Feed feeds={this.state.feeds} />
             )} />
