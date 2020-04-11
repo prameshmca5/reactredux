@@ -8,9 +8,9 @@ const MovieList =() => {
     return(
         <div>
             <h3 style={{textAlign:"center"}}>{getactval}</h3>
-            <button onClick={()=>dispatch(movie())}>Click Movie Action</button>&nbsp;&nbsp;
-            <button onClick={()=>dispatch(songs())}>Click Songs Action</button>&nbsp;&nbsp;
-            <button onClick={()=>dispatch(works())}>Click Work Action</button>&nbsp;&nbsp;
+            <button className="btn btn-primary" onClick={()=>dispatch(movie())}>Click Movie Action</button>&nbsp;&nbsp;
+            <button className="btn btn-primary" onClick={()=>dispatch(songs())}>Click Songs Action</button>&nbsp;&nbsp;
+            <button className="btn btn-primary" onClick={()=>dispatch(works())}>Click Work Action</button>&nbsp;&nbsp;
         </div>
     )
 };

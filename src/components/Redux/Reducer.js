@@ -3,6 +3,7 @@
 const MOVIE = "MOVIE";
 const SONGS = "SONGS";
 const WORKS = "WORKS";
+ 
 
 // Action created Redux
 export const movie =() => ({type:MOVIE});
@@ -13,14 +14,14 @@ export const works =() => ({type:WORKS});
 const Reducer = (state, action) => {
     switch (action.type) {
         case MOVIE:
-            return state = "Currently am watching movies";
+            return state = "Currently am watching movies"; 
 
         case SONGS:
-            return state = "Am Listing for ILAYARAJA SONGS";
+            return state = "Am Listing for ILAYARAJA SONGS"; 
         case WORKS:
-            return state = "Am Working Software Developer";
+            return state = "Am Working Software Developer"; 
         default:
-            return state = "No Selection Found";
+            return state = "No Selection Found"; 
     }
 }
 
