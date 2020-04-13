@@ -8,6 +8,7 @@ import About from './About';
 import data from '../data/data.json';
 import './App.css';
 import MovieList from "./Redux/MovieList";
+import ReduxDemo from "./ReduxDemo/ReduxDemo";
 
 class App extends Component {
   constructor(props) {
@@ -41,6 +42,7 @@ class App extends Component {
             <Route exact path="/" render={(props) => (
               <Feed feeds={this.state.feeds} />
             )} />
+            <Route path="/reduxdemo" component={ReduxDemo}/>
           </Switch>
           <div className="footer">
                 <p>&copy; {this.state.name} Inc.</p>
