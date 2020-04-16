@@ -10,19 +10,32 @@ export const movie =() => ({type:MOVIE});
 export const songs =() => ({type:SONGS});
 export const works =() => ({type:WORKS});
 
-//Reducer
-const Reducer = (state, action) => {
-    switch (action.type) {
-        case MOVIE:
-            return state = "Currently am watching movies"; 
-
-        case SONGS:
-            return state = "Am Listing for ILAYARAJA SONGS"; 
-        case WORKS:
-            return state = "Am Working Software Developer"; 
-        default:
-            return state = "No Selection Found"; 
-    }
+const initalState = {
+    counter: "Button not Clicked"
 }
 
-export default Reducer;
+//Reducer
+const reducerstate = (state = initalState, action) => {
+    if (action.type === 'MOVIE') {
+        return {
+            counter: "Am Watching Tamil Movie"
+        }
+    }
+
+    if(action.type === 'SONGS') {
+        return {
+            counter: 'Am Hearing Tamil Songs'
+        }
+    }
+
+    if(action.type === 'WORKS'){
+        return {
+            counter: "Am Working for office programming"
+        }
+    }
+
+    return state;
+
+}
+
+ export default reducerstate;

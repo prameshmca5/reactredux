@@ -1,3 +1,7 @@
 .form-control {
     font-size: 14px;
 }
+
+.formsiz {
+    min-height: 500px;
+}

@@ -1,21 +1,35 @@
-import React from "react";
-import {movie, songs, works} from "./Reducer";
-import {useSelector, useDispatch} from "react-redux";
+import React, {Component} from "react";
+import { connect } from 'react-redux';
+import Outputvalue from './Outputvalue';
 
-const MovieList =() => {
-    const getactval = useSelector(state=>state);
-    const dispatch = useDispatch();
-    return(
+class MovieList extends Component {
+    render () {
+        return (
         <div>
-            <h3 style={{textAlign:"center"}}>{getactval}</h3>
-            <button className="btn btn-primary" onClick={()=>dispatch(movie())}>Click Movie Action</button>&nbsp;&nbsp;
-            <button className="btn btn-primary" onClick={()=>dispatch(songs())}>Click Songs Action</button>&nbsp;&nbsp;
-            <button className="btn btn-primary" onClick={()=>dispatch(works())}>Click Work Action</button>&nbsp;&nbsp;
+            <h3 style={{textAlign:"center"}}>TEST => {this.props.ctr}</h3>
+            <Outputvalue value={this.props.ctr} />
+            <button className="btn btn-primary" onClick={this.props.movieClick}>Click Movie Action</button>&nbsp;&nbsp;
+            <button className="btn btn-primary" onClick={this.props.songClick}>Click Songs Action</button>&nbsp;&nbsp;
+            <button className="btn btn-primary" onClick={this.props.workClick}>Click Work Action</button>&nbsp;&nbsp;
             
         </div>
     )
-};
+}
+}
 
-export default MovieList;
+
+const mapStateToProps = state => {
+    return {
+        ctr : state.red1.counter
+    }
+}
+const mapDispatchToProps = dispatch => {
+    return{
+        movieClick : ()=>dispatch({type:"MOVIE"}),
+        songClick : ()=>dispatch({type:"SONGS"}),
+        workClick : ()=>dispatch({type:"WORKS"}),
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(MovieList);
 
 

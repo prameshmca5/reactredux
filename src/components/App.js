@@ -4,11 +4,12 @@ import Navigation from './Navigation';
 import Jumbotron from './Jumbotron';
 import Feed from './Feed';
 import Contact from './Contact';
-import About from './About';
+//import About from './About';
 import data from '../data/data.json';
 import './App.css';
 import MovieList from "./Redux/MovieList";
-import ReduxDemo from "./ReduxDemo/ReduxDemo";
+import MovieList2 from "./Redux2/MovieList2";
+import NameMgt from "./NameAdd/NameMgt";
 
 class App extends Component {
   constructor(props) {
@@ -37,12 +38,12 @@ class App extends Component {
           <Jumbotron title={this.state.jumbotronTitle}/>
           <Switch>
             <Route path="/contact" component={Contact}/>
-            <Route path="/about" component={About}/>
+            <Route path="/about" component={MovieList2}/>
             <Route path="/redux" component={MovieList}/>
             <Route exact path="/" render={(props) => (
               <Feed feeds={this.state.feeds} />
             )} />
-            <Route path="/reduxdemo" component={ReduxDemo}/>
+            <Route path="/namemgt" component={NameMgt}/>
           </Switch>
           <div className="footer">
                 <p>&copy; {this.state.name} Inc.</p>
